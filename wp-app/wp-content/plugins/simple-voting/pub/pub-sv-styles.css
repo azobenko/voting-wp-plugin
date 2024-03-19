@@ -1,4 +1,85 @@
-#votePanel {
-    background: #eee;
-    padding:20px;
+.sv-panel {
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #ccc;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    max-width: 700px;
+}
+
+.sv-panel.voted span {
+    pointer-events: none;
+}
+
+.sv-panel span {
+    padding: 8px 15px;
+    line-height: 1.2em;
+    cursor: pointer;
+    border: 1.5px solid #aaa;
+    color: #aaa;
+    border-radius: 7px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sv-panel span:first-child:hover {
+    border: none;
+}
+
+.sv-panel span:first-child {
+    cursor: auto;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+    justify-content: flex-start;
+}
+
+.sv-panel span:hover {
+    border: 1.5px solid #333;
+    color: #333;
+}
+
+.sv-panel span.voted {
+    border-color: #2b2bff;
+    color: #2b2bff;
+}
+
+.sv-panel span.disabled {
+    pointer-events: none;
+}
+
+.sv-panel span:before {
+    margin-right: 7px;
+}
+
+#vote-down:before {
+    content: '😟';
+}
+
+#vote-up:before {
+    content: '😊';
+}
+
+@media screen and (max-width: 580px) {
+    .sv-panel {
+        flex-wrap: wrap;
+    }
+
+    .sv-panel span:not(:first-child) {
+        flex: 1
+    }
+
+    .sv-panel span:first-child {
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+    }
 }

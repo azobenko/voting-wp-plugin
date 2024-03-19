@@ -12,14 +12,14 @@
 
 
 // If this file is called directly, abort
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (!defined('WPINC')) {
+    die;
 }
 
 /**
  * Core Plugin Class
  */
-require_once( plugin_dir_path( __FILE__ ) . '/inc/SimpleVoting.php' );
+require_once(plugin_dir_path(__FILE__) . '/inc/SimpleVoting.php');
 
 /**
  * Begins plugin execution

@@ -1,0 +1,36 @@
+.sv-panel div {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.sv-panel div span {
+    padding: 8px 15px;
+    line-height: 1.2em;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sv-panel span:last-child {
+    border: 1.5px solid #f83e3e;
+    color: #f83e3e;
+}
+
+.sv-panel span:first-child {
+    border: 1.5px solid #50c74b;
+    color: #50c74b;
+}
+
+.sv-panel span:before {
+    margin-right: 7px;
+}
+
+.sv-panel span:last-child:before {
+    content: '😟';
+}
+
+.sv-panel span:first-child:before {
+    content: '😊';
+}
