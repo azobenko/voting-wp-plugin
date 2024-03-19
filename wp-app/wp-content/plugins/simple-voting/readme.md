@@ -11,8 +11,8 @@ This WordPress plugin allows your site visitors to vote on your articles. It is 
 - Voting results are displayed as a percentage.
 - Voting takes place using an Ajax request.
 - After voting, the visitor sees the voting results as a percentage, and the buttons become inactive, but also show their vote (even after refreshing the page).
-- Visitors cannot vote for the same article twice. This is done using the visitor's fingerprint (e.g., their IP address).
-- The voting function is automatically displayed at the end of any article.
+- Visitors cannot vote for the same article twice. This is done using the visitor's cookie.
+- The voting function is automatically displayed at the end of any blog post.
 - Voting elements are responsive and work well on different devices and screen sizes.
 
 ### Admin Functionality:
