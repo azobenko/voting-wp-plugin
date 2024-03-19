@@ -25,3 +25,10 @@ When editing an article in the admin area, you can see the voting results in the
 - Activate Plugin on Plugins page in admin area
 - New block with voting will appear after posts' content
 - New meta-box will appear in side-area on Edit-Post admin page
+
+### Testing
+
+- For developers there has been added testing cases.
+- To set up the testing environment, you need to download the necessary vendor libraries using the composer. To do this, open the folder with the plugin in the terminal and execute the command `composer install`. If it needs, read how to install composer.
+- To run the tests, you need to open the folder with the plugin in the terminal and run the command: `vendor/bin/phpunit`
+- Tests do not cover all functions, it was added for future development as a skeleton.

@@ -134,9 +134,9 @@ class SimpleVoting
      *
      * @return string
      * @since 1.0.0
-     * @acces private
+     * @acces public
      */
-    private function get_voting_html(): string
+    public function get_voting_html(): string
     {
         //Check for the Cookies
         if ($this->is_voted()) {
@@ -158,9 +158,9 @@ class SimpleVoting
      * @param $stats string
      * @return string
      * @since 1.0.0
-     * @acces private
+     * @acces public
      */
-    private function get_voting_with_stats(string $stats): string
+    public function get_voting_with_stats(string $stats): string
     {
         $stats_arr = explode(',', $stats);
         $q = __('Thank you for your feedback.', $this->name);
