@@ -122,3 +122,6 @@ license.txt
 # plugins
 #/wp-app/wp-content/plugins/*
 #!/wp-app/wp-content/plugins/hello.php
+# vendor for tests
+/wp-app/wp-content/plugins/simple-voting/vendor/
+/wp-app/wp-content/plugins/simple-voting/.phpunit.result.cache

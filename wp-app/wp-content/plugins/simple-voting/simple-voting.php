@@ -19,7 +19,7 @@ if (!defined('WPINC')) {
 /**
  * Core Plugin Class
  */
-require_once(plugin_dir_path(__FILE__) . '/inc/SimpleVoting.php');
+require_once(plugin_dir_path(__FILE__) . '/src/SimpleVoting.php');
 
 /**
  * Begins plugin execution

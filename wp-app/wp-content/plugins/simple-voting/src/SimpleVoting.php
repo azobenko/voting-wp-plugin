@@ -25,7 +25,7 @@ class SimpleVoting
      */
     public function __construct()
     {
-        $this->version = '1.0.6';
+        $this->version = '1.0.0';
         $this->name = 'simple-voting';
     }
 
@@ -49,6 +49,30 @@ class SimpleVoting
         }
         //Registering of AJAX
         $this->register_ajax();
+    }
+
+    /**
+     * Returns plugin's version
+     *
+     * @return string
+     * @since 1.0.0
+     * @acces public
+     */
+    public function get_version(): string
+    {
+        return $this->version;
+    }
+
+    /**
+     * Returns plugin's text-domain
+     *
+     * @return string
+     * @since 1.0.0
+     * @acces public
+     */
+    public function get_name(): string
+    {
+        return $this->name;
     }
 
     /**
@@ -101,7 +125,7 @@ class SimpleVoting
     public function admin_plugin_assets(): void
     {
         if ('post' == get_current_screen()->id) {
-            wp_enqueue_style($this->name, plugins_url('/pub/adm-sv-styles.css', __DIR__), null, $this->version);
+            wp_enqueue_style($this->name, plugins_url('/src/adm-sv-styles.css', __DIR__), null, $this->version);
         }
     }
 
@@ -231,8 +255,8 @@ class SimpleVoting
 
         if (get_post_type() == 'post' && is_single()) {
             wp_enqueue_style('dashicons');
-            wp_enqueue_style($this->name, plugins_url('/pub/pub-sv-styles.css', __DIR__), ['dashicons'], $this->version);
-            wp_enqueue_script($this->name, plugins_url('/pub/pub-sv-scripts.js', __DIR__), ['jquery'], $this->version, true);
+            wp_enqueue_style($this->name, plugins_url('/src/pub-sv-styles.css', __DIR__), ['dashicons'], $this->version);
+            wp_enqueue_script($this->name, plugins_url('/src/pub-sv-scripts.js', __DIR__), ['jquery'], $this->version, true);
             wp_localize_script($this->name, 'simpleVoting', $args);
         }
     }

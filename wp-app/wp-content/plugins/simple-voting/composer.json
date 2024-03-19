@@ -1,0 +1,31 @@
+{
+  "name": "azobenko/simple-voting",
+  "description": "This plugin is designed to allows your site visitors to vote on your articles",
+  "version": "1.0.0",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    "php": "8.2.*"
+  },
+  "require-dev": {
+    "10up/wp_mock": "^1.0",
+    "phpunit/phpunit": "^9"
+  },
+  "scripts": {
+    "tests": [
+      "vendor/bin/phpunit -c phpunit.xml --colors=always --testdox"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
+}

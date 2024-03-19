@@ -1,0 +1,1 @@
+<?php //Silence... and you know
