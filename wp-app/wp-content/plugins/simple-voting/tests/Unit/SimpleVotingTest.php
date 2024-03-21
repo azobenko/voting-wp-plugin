@@ -46,6 +46,43 @@ final class SimpleVotingTest extends TestCase
         $this->assertEquals($expectedContent, $this->plugin_class->insert_voting($content));
     }
 
+    public function test_get_voting_html_not_voted(): void
+    {
+        // Simulate that user has not voted
+        $_COOKIE['alreadyVoted'] = false;
+
+        // Mock get_post_meta() function to return a specific value
+        WP_Mock::userFunction('get_post_meta', array(
+            'return' => '1,1'
+        ));
+        WP_Mock::userFunction('get_the_ID', array(
+            'return' => 1
+        ));
+
+        $html = $this->plugin_class->get_voting_html();
+
+        // Assert that the returned HTML contains the correct message
+        $this->assertStringContainsString('Was this article helpful?', $html);
+    }
+
+    public function test_get_voting_html_voted(): void
+    {
+        // Simulate that user has voted
+        $_COOKIE['alreadyVoted'] = true;
+        // Mock get_post_meta() function to return a specific value
+        WP_Mock::userFunction('get_post_meta', array(
+            'return' => '1,1'
+        ));
+        WP_Mock::userFunction('get_the_ID', array(
+            'return' => 1
+        ));
+
+        $html = $this->plugin_class->get_voting_html();
+
+        // Assert that the returned HTML contains the correct message
+        $this->assertStringContainsString('Thank you for your feedback.', $html);
+    }
+
     public function tearDown(): void
     {
         parent::tearDown();
